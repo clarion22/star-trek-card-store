@@ -9,7 +9,7 @@ export function AppContextProvider({children}) {
   const [applicationState, setApplicationState] = useState({initialDecks, initialInventory});
   const buyCardForPlayer = useCallback((cardId) => {
     const inventory = applicationState.initialInventory;
-    inventory[cardId] --;
+    if (inventory[cardId] > 0) inventory[cardId] --;
     setApplicationState({initialDecks: applicationState.initialDecks, initialInventory: inventory})
     console.log('!!!!!!!!!!!!!!!', inventory);
   }, [applicationState])
