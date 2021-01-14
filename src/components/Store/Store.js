@@ -1,8 +1,9 @@
 import Card from "../Card";
 import { initialCards, initialInventory } from "../../mockdata/CardData";
+import { useApp } from '../../context/AppContext.js';
 
 const Store = () => {
-  const buyCard = (cardId) => console.log('Buy Card Coming Soon', cardId);
+  const { buyCard } = useApp();
   const inventory = initialInventory;
   const cards = initialCards;
 
