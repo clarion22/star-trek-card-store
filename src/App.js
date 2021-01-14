@@ -3,9 +3,13 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Deck from "./components/Deck";
 import Store from "./components/Store";
 import Navbar from "./components/Navbar";
-import { AppContextProvider } from './context/AppContext';
+// import { AppContextProvider } from './context/AppContext';
+
+import {useApp} from './context/AppContext';
 
 const App = () => {
+  const myLog = useApp();
+  console.log(myLog)
   return (
     <>
       <h1 className="title is-1">Star Trek Trading Card Store!</h1>
