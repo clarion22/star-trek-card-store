@@ -12,17 +12,17 @@ export function AppContextProvider({children}) {
     let containsCard = false;
     let matchId = null;
     const initDecks = initialDecks;
-    initDecks[0].cards.forEach((card, index) => {
-      if(card.id === cardId){
-        containsCard = true;
-        matchId = index;
-      }
-    });
-    if(containsCard) {
-      initDecks[0].cards[matchId]++;
-    } else {
-      initDecks[0].cards.push(initialCards.find((card) => card.id === cardId))
-    }
+    // initDecks[0].cards.forEach((card, index) => {
+    //   if(card.id === cardId){
+    //     containsCard = true;
+    //     matchId = index;
+    //   }
+    // });
+    // if(containsCard) {
+    //   initDecks[0].cards[matchId]++;
+    // } else {
+    initDecks[0].cards.push(initialCards.find((card) => card.id === cardId))
+    // }
     setApplicationState({initialDecks: initDecks, initialInventory})
   },[applicationState])
 
