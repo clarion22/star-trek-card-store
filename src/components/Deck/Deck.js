@@ -1,13 +1,23 @@
-import { useParams } from 'react-router-dom'
+// import {useCallback, useEffect} from 'react';
+import { useParams } from 'react-router-dom';
 
 import Card from "../Card";
 import { initialDecks } from "../../mockdata/CardData";
+import { useApp } from '../../context/AppContext.js';
 
 const Deck = () => {
   const { id } = useParams();
-  const decks = initialDecks;
+  const decks = useApp().initialDecks;
 
   const deck = decks[id];
+
+  // const updateDeck = useCallback((deck)=>{
+  //   if(deck.cards[id])
+  // },[])
+
+  // useEffect(() => {
+  //   console.log("DESKS UPDATED", decks)
+  // }, [decks]);
 
   return (
     <div>
